@@ -6,6 +6,7 @@ mux16to1 uut(in,sel,out);
 initial begin
 $dumpfile("mux16to1.vcd");
 $dumpvars(0,mux16to1_tb);
+$monitor($time ,"in=%h,sel=%h,out=%b",in,sel,out);
 in=16'h3f0d;
 sel=4'h0;
 #10 sel=4'hb;
