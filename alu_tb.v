@@ -11,11 +11,11 @@ alu uut(.a(a),
 	.parity(P),
 	.overflow(O)
 	);
+initial begin
 $dumpfile("alu.vcd");
 $dumpvars(0,alu_tb);
-initial begin
-a=4'hfffe;b=4'h0002;
-#10 a=4'h8fb9;b=4'h0013;
+a=16'hfffe;b=16'h0002;
+#10 a=16'h8fb9;b=16'h0013;
 #10;
 $finish();
 end
