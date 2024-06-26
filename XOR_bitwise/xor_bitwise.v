@@ -9,7 +9,7 @@ generate
   for (p=0;p<N;p=p+1)//16 copies of xor are generated via loop
 
 begin : xorbit//begin : end
-xor XG(out[p],a[p],b[p]);
+  xor XG(out[p],a[p],b[p]);//the loop variables will be xorbit[0].XG,xorbit[1].XG.......xorbit[15].XG
 end
 endgenerate
 
