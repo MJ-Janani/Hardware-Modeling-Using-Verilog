@@ -8,8 +8,10 @@ This command compiles the Verilog code in file_name.v and produces an output fil
 
 2.Run the Simulation:
 "vvp file_name" 
+
 This command runs the compiled Verilog code, generating a dumpfile file_name.vcd for visualization.
 
 3.View in GTKWave:
-"gtkwave file_name.vcd"
+"gtkwave file_name.vcd" . 
+
 This command opens the waveform file file_name.vcd in GTKWave for graphical representation.
