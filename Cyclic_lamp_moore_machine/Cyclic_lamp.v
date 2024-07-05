@@ -2,8 +2,8 @@ module cyclic_lamp(clock,light);
     input clock;
     output reg [2:0]light;
     reg [1:0]state;
-    parameter RED=3'b100;GREEN=3'b010;YELLOW=3'b001;
-    parameter s0=0;s1=1;s2=2;
+    parameter RED=3'b100,GREEN=3'b010,YELLOW=3'b001;
+    parameter s0=0,s1=1,s2=2;
     always @(posedge clock)
         case (state)
             //s0 means RED
@@ -25,19 +25,3 @@ module cyclic_lamp(clock,light);
             end
         endcase
         endmodule
-
- module cyclic_lamp_tb;
-     reg clock;
-     wire [2:0]light;
-     cyclic_lamp uut(clock,light);
-     always #5 clock=~clock;
-     initial begin
-         clock=1'b0;
-         #100 $finish();
-     end
-     initial begin
-         $dumpfile("cyclic_lamp.vcd");
-         $dumpvars(0,cyclic_lamp_tb);
-         $monitor("Time: %d , RGY= %b ",$time,light);
-     end
- endmodule
